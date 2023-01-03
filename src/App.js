@@ -1,24 +1,17 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import { SignUp } from "./components/SignUp";
+import { PaperSDKProvider } from "@paperxyz/react-client-sdk";
+import { Login } from "./components/Login";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <PaperSDKProvider
+      chainName="Polygon"
+      clientId="4c3ba2d9-4e73-45c4-824f-e903765f810a"
+    >
+      <Login />
+      <SignUp />
+    </PaperSDKProvider>
   );
 }
 
