@@ -1,9 +1,11 @@
 import { CreateWallet, LoginWithPaper } from "@paperxyz/react-client-sdk";
-import React, { useRef } from "react";
+import React, { useState } from "react";
 import { fetchUserDetails, fetchUserToken } from "../../common/utils";
 
 export const Form = () => {
-  const emailRef = useRef();
+  const [email, setEmail] = useState("");
+  const [createdWallet, setCreatedWallet] = useState(null);
+  const [error, setError] = useState(null);
 
   return (
     <div className="flex min-h-full items-center justify-center py-12 px-4 sm:px-6 lg:px-8">
@@ -42,7 +44,8 @@ export const Form = () => {
                     Email address
                   </label>
                   <input
-                    ref={emailRef}
+                    value={email}
+                    onChange={(e) => setEmail(e.target.value)}
                     type="email"
                     autoComplete="email"
                     required
@@ -52,20 +55,27 @@ export const Form = () => {
                 </div>
               </div>
 
+              {createdWallet && (
+                <div className="text-green-700">
+                  Created wallet: {createdWallet}
+                </div>
+              )}
+
+              {error && (
+                <div className="text-red-700">Created wallet: {error}</div>
+              )}
+
               <CreateWallet
-                emailAddress={emailRef.current?.value}
+                emailAddress={email}
                 onEmailVerificationInitiated={() => {
                   console.log("onEmailVerificationInitiated callback fired");
+                  setCreatedWallet(null);
                 }}
                 onError={(error) => {
                   console.log(error);
+                  setError(error?.error?.message);
                 }}
-                onSuccess={(user) =>
-                  // note that user.accessCode will only be present if [clientId] is passed in.
-                  console.log(
-                    `${user.emailAddress} has created a new Paper Wallet: ${user.walletAddress} with accessCode: ${user.accessCode}`
-                  )
-                }
+                onSuccess={(user) => setCreatedWallet(user.walletAddress)}
               />
             </div>
           </div>
