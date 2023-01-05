@@ -1,16 +1,12 @@
 import "./App.css";
-import { SignUp } from "./components/SignUp";
 import { PaperSDKProvider } from "@paperxyz/react-client-sdk";
-import { Login } from "./components/Login";
+import { Form } from "./components/Form";
+import { CLIENT_ID } from "./common/constants";
 
 function App() {
   return (
-    <PaperSDKProvider
-      chainName="Polygon"
-      clientId="4c3ba2d9-4e73-45c4-824f-e903765f810a"
-    >
-      <Login />
-      <SignUp />
+    <PaperSDKProvider chainName="Polygon" clientId={CLIENT_ID}>
+      <Form />
     </PaperSDKProvider>
   );
 }

@@ -2086,21 +2086,21 @@
     "@nodelib/fs.scandir" "2.1.5"
     fastq "^1.6.0"
 
-"@paperxyz/js-client-sdk@0.0.41":
-  version "0.0.41"
-  resolved "https://registry.yarnpkg.com/@paperxyz/js-client-sdk/-/js-client-sdk-0.0.41.tgz#b609ddb67ffd8894521a87cb44d133040c80690c"
-  integrity sha512-CUZaqA85b3b8Q9Q+bcOcV42XMDU0gL0VPzMqs27btsLWrTewttcv/ZReNUrq6rt2NSeurhCG4BMKq///WRlWyA==
+"@paperxyz/js-client-sdk@^0.0.42":
+  version "0.0.42"
+  resolved "https://registry.yarnpkg.com/@paperxyz/js-client-sdk/-/js-client-sdk-0.0.42.tgz#fcd3ee05a8c201f1234df3f9059745aca419040b"
+  integrity sha512-vSDAN16JEjY2bVYrmDrWo0ta7f9q6nW4pqJDsNOmg3HHiKX2OOB+3tdb0N+EWF/yjbzNzWv024VOy2a1wca8pQ==
   dependencies:
     ethers "^5.7.2"
 
-"@paperxyz/react-client-sdk@^0.8.8":
-  version "0.8.8"
-  resolved "https://registry.yarnpkg.com/@paperxyz/react-client-sdk/-/react-client-sdk-0.8.8.tgz#251d5b456e23f41d5daf9287c8521637c4b785d4"
-  integrity sha512-1HSi8bg849IUr+gw9CjXGB6RegzH9iATF9npLzHSHGqd4n7stVw+8rcP1Ncw7F7oO3sW4JpsWPcpZko3ko+JrQ==
+"@paperxyz/react-client-sdk@^0.8.9":
+  version "0.8.9"
+  resolved "https://registry.yarnpkg.com/@paperxyz/react-client-sdk/-/react-client-sdk-0.8.9.tgz#201e85640be6e2a559d21d3269474da95d9ed358"
+  integrity sha512-/Sgv5oJX52Er5lo2SarDR3CIqVmVNoBtRxfUo4YMSgnG2WueTpumEsR9Uvc5rg7N31BXd0X68+LYPnzHIkP8aA==
   dependencies:
     "@emotion/css" "11.10.5"
     "@headlessui/react" "1.7.6"
-    "@paperxyz/js-client-sdk" "0.0.41"
+    "@paperxyz/js-client-sdk" "^0.0.42"
     ethers ">=5"
     wagmi "0.7.15"
 
