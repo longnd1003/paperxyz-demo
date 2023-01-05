@@ -1,10 +1,9 @@
 import { CreateWallet, LoginWithPaper } from "@paperxyz/react-client-sdk";
-import React, { useRef, useState } from "react";
+import React, { useRef } from "react";
 import { fetchUserDetails, fetchUserToken } from "../../common/utils";
 
 export const Form = () => {
   const emailRef = useRef();
-  const [balance, setBalance] = useState();
 
   return (
     <div className="flex min-h-full items-center justify-center py-12 px-4 sm:px-6 lg:px-8">
